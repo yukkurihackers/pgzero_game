@@ -7,3 +7,9 @@ A simplified version of Space Invaders, used in a beginner tutorial about Python
 1. Clone or downloadでzipファイルをダウンロード。
 2. 展開してフォルダに入る。
 3. $ pgzrun game.py で起動。
+
+Credits for efx sounds from SoundBible.com
+- [winner sound](http://soundbible.com/480-Kids-Cheering.html)
+- [loser sound](http://soundbible.com/1810-Wind.html)
+
+[Space Invaders sounds](http://samples.mameworld.info/Unofficial%20Samples.htm)
