@@ -23,6 +23,7 @@ ALIENS_PER_ROW = 7
 ALIEN_X_DISTANCE = 60
 ALIEN_Y_DISTANCE = 40
 ALIEN_KILL_SCORE = 100
+ALIEN_COSTUME_INTERVAL = 20
 
 EXPLOSION_TICK_LIMIT = 15
 
@@ -69,6 +70,7 @@ class Alien(Actor):
         self.x_speed = ALIEN_X_SPEED
         self.y_speed = ALIEN_Y_SPEED
         self.lives = ALIEN_LIVES
+        self.ticks = 0
          
     def update(self):
         self.x += self.x_speed
@@ -76,8 +78,15 @@ class Alien(Actor):
         if abs(self.movement) >= self.max_movement:
             self.x_speed *= -1
             self.y += self.y_speed
-            self.movement = 0                
-
+            self.movement = 0
+        self.ticks += 1
+        if self.ticks > ALIEN_COSTUME_INTERVAL:
+            self.ticks = 0
+            if self.image == 'alien':
+                self.image = 'alien2'
+            else:
+                self.image = 'alien'
+            
     def is_dead(self):
         return self.lives == 0
 
