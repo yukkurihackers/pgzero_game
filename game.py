@@ -189,6 +189,7 @@ class PlayScene:
             if len(self.aliens) == 0 and len(self.explosions) == 0:
                 self.game.set_game_over_message("YOU WON!!!!!", "#00FFFF")
                 self.game.change_scene(GAME_OVER_SCENE)
+                sounds.winner.play()
                 
         else:
             for explosion in self.explosions[:]:
@@ -198,6 +199,7 @@ class PlayScene:
             if len(self.explosions) == 0:
                 self.game.set_game_over_message("YOU LOST...", "red")
                 self.game.change_scene(GAME_OVER_SCENE)
+                sounds.loser.play()
 
     def draw(self):
         screen.clear()
